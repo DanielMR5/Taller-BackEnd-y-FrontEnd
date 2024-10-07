@@ -1,0 +1,22 @@
+<!-- mascotas.component.html -->
+
+<div>
+  <h2>Agregar Mascota</h2>
+  <input [(ngModel)]="nuevaMascota.nombre" placeholder="Nombre" required />
+  <input [(ngModel)]="nuevaMascota.raza" placeholder="Raza" required />
+  <input type="number" [(ngModel)]="nuevaMascota.edad" placeholder="Edad" required />
+  <button (click)="agregarMascota()">Agregar</button>
+</div>
+
+<div>
+  <h2>Lista de Mascotas</h2>
+  <ul>
+    <li *ngFor="let mascota of mascotas">
+      <span>{{ mascota.nombre }} - {{ mascota.raza }} - {{ mascota.edad }} años</span>
+      <button (click)="eliminarMascota(mascota.id!)">Eliminar</button>
+      <button (click)="actualizarMascota(mascota)">Actualizar</button>
+      <button (click)="solicitarMascota(mascota.id!)">Solicitar</button>
+    </li>
+  </ul>
+</div>
+

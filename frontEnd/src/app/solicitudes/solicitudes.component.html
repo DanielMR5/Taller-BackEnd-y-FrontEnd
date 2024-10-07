@@ -1,0 +1,49 @@
+<div class="container mt-3">
+    <h2>Lista de Solicitudes</h2>
+  
+    <!-- Enlace de la imagen de fondo -->
+    <div class="text-center mb-4">
+      <img src="https://www.ica.gov.co/getattachment/Importacion-y-Exportacion/Otros-Procedimientos/Requisitos-para-importar-mascotas/REGISTRO-MASCOTAS-2.png.aspx" alt="Solicitudes" class="img-fluid" style="max-width: 100%; height: auto;">
+    </div>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre Interesado</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitud of solicitudes">
+          <td>{{ solicitud.nombre_interesado }}</td>
+          <td>{{ solicitud.direccion }}</td>
+          <td>{{ solicitud.telefono }}</td>
+          <td>{{ solicitud.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h3>Agregar Nueva Solicitud</h3>
+    <form (submit)="agregarSolicitud()">
+      <div class="mb-3">
+        <label for="nombre_interesado" class="form-label">Nombre Interesado</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevaSolicitud.nombre_interesado" name="nombre_interesado" required>
+      </div>
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevaSolicitud.direccion" name="direccion" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevaSolicitud.telefono" name="telefono" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="nuevaSolicitud.email" name="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+  </div>
+  

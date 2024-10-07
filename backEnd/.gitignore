@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Directorios de DBeaver
+.dbeaver/
+
+# Archivos de configuración del sistema
+*.env
+
+# Archivos de configuración de IDE
+.idea/
+.vscode/
+
+# Otros archivos o directorios que quieras ignorar
+.DS_Store
+Thumbs.db
+
